@@ -1,0 +1,42 @@
+# Sutra — AI Chief Technology Officer (SAM-AG-007)
+# Config: model, tools, limits. (spec 16.1 / 16.2)
+#
+# All values can be overridden by environment variables:
+#   OLLAMA_BASE_URL, HUMAN_OWNER, DATABASE_URL
+
+agent:
+  canonical_id: SAM-AG-007
+  name: Sutra
+  position_id: TEC-001
+  department: "Technology, MCP & AgentOps"
+  role: "AI Chief Technology Officer (AI CTO)"
+  reports_to: SAM-AG-001          # Arjun (AI CEO)
+  evaluator: SAM-AG-029           # Satya (Chief Assurance) — independent
+  prompt_version: v1.0
+
+model:
+  provider: ollama
+  endpoint: http://localhost:11434
+  name: llama3.1:8b
+  temperature: 0.2
+  # If the model is unavailable, Sutra reports "model unavailable" —
+  # it does not crash and does not fake output.
+
+human_owner: "Founder / Designated Technology & Security Owner"
+
+limits:
+  max_tool_steps: 6
+  cost_limit_tokens_per_day: 1000000
+
+# KPI targets (spec section 6.1) — baseline-test in first 30 days, then enforce.
+kpi_targets:
+  platform_availability: ">=99.5%"
+  workflow_reliability: ">=99%"
+  registry_integrity: "100%"
+  unauthorised_actions: 0
+  traceability: "100%"
+  release_quality: "100%"
+  recovery_within_rto: "100%"
+  unescalated_critical: 0
+  unattributed_spend: 0
+  test_evidence_coverage: "100%"
