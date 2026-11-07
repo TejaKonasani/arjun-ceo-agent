@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Databases (local)
+*.db
+*.sqlite3
+
+# Env / secrets
+.env
+secrets/
+
+# Test / tooling
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (screenshots tooling, if any)
+node_modules/
